@@ -8,7 +8,7 @@ let valoration = 0;
 const handleClick = (event) => {
   event.preventDefault();
   const grade = event.target;
-  valoration = grade.getAttribute("value");
+  valoration = grade.getAttribute("grade");
   grade.style.backgroundColor = "hsl(25, 97%, 53%)";
   grade.style.color = "hsl(0, 0%, 100%)";
   setDefault(event);
@@ -17,7 +17,7 @@ const handleClick = (event) => {
 const setDefault = (event) => {
   const father = event.target.parentElement;
   Array.from(father.children).forEach((child) => {
-    if (child.getAttribute("value") !== valoration) {
+    if (child.getAttribute("grade") !== valoration) {
       child.style.backgroundColor = "hsla(213, 19%, 23%, 0.88)";
       child.style.color = "hsl(216, 12%, 54%)";
     }
