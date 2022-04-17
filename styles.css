@@ -26,7 +26,7 @@ body{
 
 main{
   background: var(--dark-blue);
-  width: 350px;
+  width: 380px;
   height: 380px;
   border-radius: 25px;
 }
@@ -52,6 +52,7 @@ main{
 }
 
 .component-text h1{
+  font-size: 20px;
   font-weight: 700;
   margin-bottom: 1rem;
 }
@@ -91,7 +92,6 @@ main{
   border-radius: 25px;
   color: var(--white);
   background: var(--primary-orange);
-  font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.1rem;
   cursor: pointer;
