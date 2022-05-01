@@ -7,6 +7,8 @@
   <link rel="stylesheet" type='text/css' href="./styles.css">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <script src="./main.js" defer></script>
+  <link rel="stylesheet/less" type="text/css" href="./style.less" />
+  <script src="https://cdn.jsdelivr.net/npm/less@4"></script>
   <title>Frontend Mentor | Interactive rating component</title>
 </head>
 
@@ -20,26 +22,26 @@
         <img src="./images/icon-star.svg" alt="">
       </div>
       <div class="component-text">
-        <h1>How did we do?</h1>
-        <p>Please let us know how we did with your support request. All feedback is appreciated
-          to help us improve our offering!</p>
+        <h1>You will ask yourself?</h1>
+        <p>How many times do you go through my thoughts?</p>
       </div>
       <div class="component-grades">
-        <div class="grades">1</div>
-        <div class="grades">2</div>
-        <div class="grades">3</div>
-        <div class="grades">4</div>
-        <div class="grades">5</div>
+        <img class='faces' src="./design/face_happy.png" alt="">
       </div>
-      <button class="submit-button">SUBMIT</button>
+
+      <button class="submit-button">DISCOVER</button>
     </div>
 
     <div class="thank-you hidden">
-      <img src="./images/illustration-thank-you.svg" alt="thank-you-image">
-      <p class="valoration">You selected 4 out of 5 </p>
-      <h1 class="text-title">Thank you!</h1>
-      <p class="text-p">We appreciate you taking the time to give a rating. If you ever need more support,
-        don’t hesitate to get in touch!</p>
+      <img class='faces2' src="./design/face_very happy.png" alt="thank-you-image">
+      <h2>Today I thought of you:</h2>
+      <h3 id="number" class="particletext hearts"></h3>
+      <div class="bubbling-heart">
+        <div><i class="fa fa-heart fa-5x"></i></div>
+        <div><i class="fa fa-heart fa-5x"></i></div>
+        <div><i class="fa fa-heart fa-5x"></i></div>
+        <div><i class="fa fa-heart fa-5x"></i></div>
+      </div>
     </div>
   </main>
 

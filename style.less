@@ -1,0 +1,41 @@
+@noOfHearts: 8;
+
+.bubbling-heart-animation(@bubbling-duration,@oscillation-duration) {
+    .bubbling-heart div {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, 25vh) scale(0);
+      opacity: 0;
+      animation: bubbleUp @bubbling-duration*1s infinite;
+      .fa {
+        transform: translateX(12.5vw) rotate(25deg);
+        animation: oscillate @oscillation-duration*1s ease-in-out infinite;
+      }
+
+      .animation-delays(@i:2) when (@i <= @noOfHearts) {
+        &:nth-child(@{i}) {
+          animation-delay: (@i - 1)*@bubbling-duration*0.25s;
+          .fa {
+            animation-delay: (@i - 1)*@oscillation-duration*0.25s;
+          }
+        }
+        .animation-delays(@i + 1);
+      }
+      .animation-delays;
+    }
+    @keyframes bubbleUp {
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translate(-50%, -25vh) scale(2);
+      }
+    }
+    @keyframes oscillate {
+      50% {
+        transform: translateX(-12.5vw) rotate(-25deg);
+      }
+    }
+  }
+  .bubbling-heart-animation(1,4); //parameters => up-down duration, left-right duration

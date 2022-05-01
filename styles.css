@@ -64,9 +64,16 @@ main{
 
 .component-grades{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
+.faces{
+  height:100px;
+}
+.faces2{
+  height:200px;
+}
+
 .grades{
   display: flex;
   justify-content: center;
@@ -108,10 +115,11 @@ main{
   align-items: center;
   flex-direction: column;
   gap: 1.5rem;
+  height: 100%;
 }
 .thank-you img{
-  height: 6rem;
-  width: 7.5rem;
+  /* height: 6rem;
+  width: 7.5rem; */
   margin-top: 1.5rem;
 }
 .valoration{
@@ -136,4 +144,49 @@ main{
   }
   .hidden{
     display: none;
+  }
+
+
+  .bubbling-heart div {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 25vh) scale(0);
+    opacity: 0;
+    animation: bubbleUp 2s infinite;
+  }
+  .bubbling-heart div .fa {
+    transform: translateX(12.5vw) rotate(25deg);
+    animation: oscillate 4s ease-in-out infinite;
+  }
+  .bubbling-heart div:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+  .bubbling-heart div:nth-child(2) .fa {
+    animation-delay: 1s;
+  }
+  .bubbling-heart div:nth-child(3) {
+    animation-delay: 1s;
+  }
+  .bubbling-heart div:nth-child(3) .fa {
+    animation-delay: 2s;
+  }
+  .bubbling-heart div:nth-child(4) {
+    animation-delay: 1.5s;
+  }
+  .bubbling-heart div:nth-child(4) .fa {
+    animation-delay: 3s;
+  }
+  @keyframes bubbleUp {
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -25vh) scale(2);
+    }
+  }
+  @keyframes oscillate {
+    50% {
+      transform: translateX(-12.5vw) rotate(-25deg);
+    }
   }

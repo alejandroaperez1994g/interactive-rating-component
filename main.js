@@ -3,6 +3,7 @@ const grades = document.querySelectorAll(".grades");
 const mainPage = document.querySelector(".component-container");
 const thankPage = document.querySelector(".thank-you");
 const valorationText = document.querySelector(".valoration");
+const number = document.getElementById("number");
 let valoration = 0;
 
 const handleClick = (event) => {
@@ -24,15 +25,33 @@ const setDefault = (event) => {
   });
 };
 
+let interval;
+let i = Math.floor(Math.random() * 1000) + 1;
+let j = 1;
+console.log(i);
 const handleSubmit = (event) => {
-  if (valoration === 0) return;
   mainPage.classList.add("hidden");
   thankPage.classList.remove("hidden");
-  valorationText.innerHTML = `You selected ${valoration} out of 5`;
+  setUpperCountDown();
+};
+
+const setUpperCountDown = () => {
+  interval = setInterval(() => {
+    number.textContent = `${j} times`;
+    j++;
+    stopIntervalCounter();
+  });
+};
+
+const stopIntervalCounter = () => {
+  if (j > i) {
+    clearInterval(interval);
+  }
 };
 
 Array.from(grades).forEach((grade) => {
   grade.addEventListener("click", handleClick);
 });
 
+number.addEventListener("change", stopIntervalCounter);
 button.addEventListener("click", handleSubmit);
